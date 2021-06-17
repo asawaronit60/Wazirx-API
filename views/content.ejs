@@ -1,0 +1,33 @@
+<%- include("header"); -%>
+ 
+<div class="content_title">
+  <p>#</p>
+  <p>name</p>
+  <p>Last</p>
+  <p>Buy/Sell</p>
+  <p>Volume</p>
+  <p>base_unit</p>
+</div>
+ 
+ <% function thousands_separators(num)
+  {
+    var num_parts = num.toString().split(".");
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num_parts.join(".");
+  } %>
+
+ <%data.forEach((data,index)=>{%>
+
+<div class="content_items">
+	
+	<p><%=index+1%> </p>
+	<p><%=data.name%></p>
+	<p>&#8377 <%=thousands_separators(data.last)%></p>
+	<p>&#8377 <%=thousands_separators(data.buy)%> / &#8377 <%=thousands_separators(data.sell)%></p>
+	<p class="volume"><%= thousands_separators(data.volume) %></p>
+	<p><%=data.base_unit%></p>
+  </div>
+  
+  <% }) %>
+
+  
