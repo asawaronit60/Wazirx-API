@@ -55,12 +55,8 @@ const deleteAll = async (req, res, next) => {
 }
 
 
-//route handler
-// app.get('/', deleteAll, addData, (req, res) => {
-// 	res.render('home')
-// })
-
-app.get('/getData', deleteAll , addData  ,async (req, res) => {
+//route
+app.get('/', deleteAll , addData  ,async (req, res) => {
 	try {
 		const data = await Wazirx.find({});
 
