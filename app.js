@@ -35,7 +35,7 @@ const addDataToDB = async ({ name, sell, buy, volume, base_unit, last }) => {
 		volume: volume,
 		base_unit: base_unit
 	})
-	wazir.save();
+	await wazir.save();
 }
 
 
@@ -56,11 +56,11 @@ const deleteAll = async (req, res, next) => {
 
 
 //route handler
-app.get('/', deleteAll, addData, (req, res) => {
-	res.render('home')
-})
+// app.get('/', deleteAll, addData, (req, res) => {
+// 	res.render('home')
+// })
 
-app.get('/getData',async (req, res) => {
+app.get('/getData', deleteAll , addData  ,async (req, res) => {
 	try {
 		const data = await Wazirx.find({});
 
