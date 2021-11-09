@@ -54,10 +54,10 @@ app.get('/', deleteAll, getData, async (req, res) => {
 })
 
 
-
+const PORT  = 3000 || 8000
 
 
 //start
-app.listen(5000, () => {
-    console.log("server is runnig at port 5000")
+app.listen(PORT, () => {
+    console.log(`server is runnig at port ${PORT}`)
 })
