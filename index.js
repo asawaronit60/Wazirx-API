@@ -3,8 +3,10 @@ const app = express()
 const axios = require('axios')
 const { uuid } = require('uuidv4')
 const { pool, createTable } = require('./database')
-
+const dotenv = require('dotenv')
+dotenv.config({path:'./config.env'})
 createTable()
+
 
 app.set('view engine', 'ejs')
 app.use(express.static("public"));

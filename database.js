@@ -3,7 +3,7 @@ const {Pool} = require('pg')
 const pool = new Pool({
     user:"postgres",
     host:"localhost",
-    database:"wazirx_database",
+    database:"wazirx_database", //postgresql-parallel-90655
     password:"admin",
     port:5432
 })
